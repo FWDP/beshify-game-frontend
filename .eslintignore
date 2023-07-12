@@ -1,0 +1,8 @@
+public
+node_modules
+package-lock.json
+**/*.test.ts
+coverage
+.eslintrc.cjs
+tailwind.config.js
+postcss.config.js
