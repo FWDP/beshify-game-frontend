@@ -1,7 +1,10 @@
+import AppRoutes from './routes';
+
 function App() {
   return (
     <>
-      <h1 className="text-3xl font-bold underline">Beshify Game</h1>
+      {/* Modals Here */}
+      <AppRoutes />
     </>
   );
 }
