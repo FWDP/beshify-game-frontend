@@ -47,7 +47,7 @@ const CreateRoom = () => {
           />
         </label>
 
-        <button type="submit" className="btn bg-green-600 text-white">
+        <button type="submit" className="btn btn-success text-white">
           PLAY NA!
         </button>
       </form>
