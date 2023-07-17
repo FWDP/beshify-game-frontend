@@ -37,15 +37,15 @@ const CreateRoom = () => {
             {...register("roomSize")}
           />
         </label>
-        <div>✨Time🤸to🤸beshify✨</div>
-        {/* <label className="flex flex-col">
+        <label className="flex flex-col">
+          ✨Time🤸to🤸beshify✨
           <input
-            type="text"
-            placeholder="Room Size"
-            className="input input-bordered input-sm w-full max-w-xs"
+            type="date"
+            placeholder="Date"
+            className="input input-bordered input-sm w-full max-w-xs my-3"
             {...register("roomSize")}
           />
-        </label> */}
+        </label>
 
         <button type="submit" className="btn bg-green-600 text-white">
           PLAY NA!
