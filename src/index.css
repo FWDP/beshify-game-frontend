@@ -1,3 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.custom-placeholder::placeholder {
+  font-size: 1rem;
+  color: #888;
+}
