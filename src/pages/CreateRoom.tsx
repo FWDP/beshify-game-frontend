@@ -1,56 +1,62 @@
-import { useForm } from "react-hook-form";
+import { useForm, FormProvider } from "react-hook-form";
+import { Room } from "../types";
+import { FormInput } from "../components/InputForm";
 
 const CreateRoom = () => {
-  const { register, handleSubmit } = useForm();
+  const { trigger } = useForm<Room>();
+  const methods = useForm();
 
-  const onSubmit = handleSubmit((d) => console.log(d));
+  const onSubmit = (data: any) => {
+    console.log(data);
+  };
 
   return (
-    <div className="flex justify-center">
-      {/* eslint-disable-next-line @typescript-eslint/no-misused-promises */}
-      <form onSubmit={onSubmit} className="text-center">
-        <h1 className="font-bold text-3xl m-8">CREATE ROOM</h1>
-        <label className="flex flex-col">
-          ✨Room🤸name🤸ng🤸mga🤸beshie✨
-          <input
-            type="text"
-            placeholder="Room Name"
-            className="input input-bordered input-sm w-full max-w-xs my-3"
-            {...register("roomName")}
-          />
-        </label>
-        <label className="flex flex-col">
-          ✨Password✨
-          <input
-            type="password"
-            placeholder="Password"
-            className="input input-bordered input-sm w-full max-w-xs my-3"
-            {...register("password")}
-          />
-        </label>
-        <label className="flex flex-col">
-          ✨Room Size✨
-          <input
-            type="text"
-            placeholder="Room Size"
-            className="input input-bordered input-sm w-full max-w-xs my-3"
-            {...register("roomSize")}
-          />
-        </label>
-        <label className="flex flex-col">
-          ✨Time🤸to🤸beshify✨
-          <input
-            type="date"
-            placeholder="Date"
-            className="input input-bordered input-sm w-full max-w-xs my-3"
-            {...register("roomSize")}
-          />
-        </label>
+    <div className="flex justify-center h-screen items-center">
+      <FormProvider {...methods}>
+        <form onSubmit={methods.handleSubmit(onSubmit)} className="text-center">
+          <h1 className="font-bold text-5xl m-8">CREATE ROOM</h1>
 
-        <button type="submit" className="btn btn-success text-white">
-          PLAY NA!
-        </button>
-      </form>
+          <FormInput
+            label="Room🤸name🤸ng🤸mga🤸beshie"
+            name="roomName"
+            trigger={trigger}
+            type="text"
+            minLength={2}
+            maxLength={8}
+          />
+
+          <FormInput
+            label="Password"
+            name="password"
+            trigger={trigger}
+            type="password"
+            minLength={4}
+            maxLength={4}
+          />
+
+          <FormInput
+            label="Room Size"
+            name="roomSize"
+            trigger={trigger}
+            type="text"
+            minLength={1}
+            maxLength={10}
+          />
+
+          <FormInput
+            label="Time🤸to🤸beshify"
+            name="timeToBeshify"
+            trigger={trigger}
+            type="text"
+            minLength={1}
+            maxLength={3}
+          />
+
+          <button type="submit" className="btn btn-success text-white">
+            PLAY NA!
+          </button>
+        </form>
+      </FormProvider>
     </div>
   );
 };
