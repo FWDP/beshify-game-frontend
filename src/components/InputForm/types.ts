@@ -4,11 +4,11 @@ export type Room = {
   roomName: string;
   password: string;
   roomSize: string;
-  timeToBeshify: number;
+  timeLimit: number;
 };
 
 export interface FormInputProps {
-  name: "roomName" | "password" | "roomSize" | "timeToBeshify";
+  name: "roomName" | "password" | "roomSize" | "timeLimit";
   label: string;
   type?: string;
   rules?: Object;

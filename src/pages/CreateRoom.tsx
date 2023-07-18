@@ -45,9 +45,9 @@ const CreateRoom = () => {
 
           <FormInput
             label="Time🤸to🤸beshify"
-            name="timeToBeshify"
+            name="timeLimit"
             trigger={trigger}
-            type="text"
+            type="number"
             minLength={1}
             maxLength={3}
           />

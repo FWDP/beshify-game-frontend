@@ -6,5 +6,5 @@ export type Room = {
   roomName: string;
   password: string;
   roomSize: string;
-  timeToBeshify: number;
+  timeLimit: number;
 };
