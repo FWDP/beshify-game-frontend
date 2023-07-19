@@ -1,4 +1,4 @@
-import { LobbyDetails } from '../types';
+import { LobbyDetails, PlayerDetails } from '../types';
 
 export const roomData: LobbyDetails[] = [
   {
@@ -28,5 +28,48 @@ export const roomData: LobbyDetails[] = [
     avatar: 'https://www.pngall.com/wp-content/uploads/12/Avatar-Profile-Vector-PNG-File.png',
     playerCount: 16,
     roomSize: 50,
+  },
+];
+
+export const playerDetails: PlayerDetails[] = [
+  {
+    id: 'player-1',
+    username: 'Beshiewap',
+    avatar: 'https://www.pngall.com/wp-content/uploads/12/Avatar-Profile-Vector-PNG-File.png',
+  },
+  {
+    id: 'player-2',
+    username: 'Beshiewap',
+    avatar: 'https://www.pngall.com/wp-content/uploads/12/Avatar-Profile-Vector-PNG-File.png',
+  },
+  {
+    id: 'player-3',
+    username: 'Beshiewap',
+    avatar: 'https://www.pngall.com/wp-content/uploads/12/Avatar-Profile-Vector-PNG-File.png',
+  },
+  {
+    id: 'player-4',
+    username: 'Beshiewap',
+    avatar: 'https://www.pngall.com/wp-content/uploads/12/Avatar-Profile-Vector-PNG-File.png',
+  },
+  {
+    id: 'player-5',
+    username: 'Beshiewap',
+    avatar: 'https://www.pngall.com/wp-content/uploads/12/Avatar-Profile-Vector-PNG-File.png',
+  },
+  {
+    id: 'player-6',
+    username: 'Beshiewap',
+    avatar: 'https://www.pngall.com/wp-content/uploads/12/Avatar-Profile-Vector-PNG-File.png',
+  },
+  {
+    id: 'player-7',
+    username: 'Beshiewap',
+    avatar: 'https://www.pngall.com/wp-content/uploads/12/Avatar-Profile-Vector-PNG-File.png',
+  },
+  {
+    id: 'player-8',
+    username: 'Beshiewap',
+    avatar: 'https://www.pngall.com/wp-content/uploads/12/Avatar-Profile-Vector-PNG-File.png',
   },
 ];
