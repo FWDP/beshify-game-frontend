@@ -1,5 +1,6 @@
 import { useNavigate, useParams } from 'react-router-dom';
 
+import ChatBox from '../components/ChatBox';
 import BackIcon from '../components/BackIcon';
 import { playerDetails } from '../constants';
 import UserAvatar from '../components/UserAvatar';
@@ -15,10 +16,10 @@ const Room = () => {
           <div className="grid grid-cols-3">
             <div className="col-span-1 p-5 pr-3 ">
               <div className="flex justify-center relative ">
-                <h1 className="text-xl z-50 font-bold bg-black text-white absolute p-1 rounded left-8">
-                  Host
-                </h1>
                 <div className="avatar">
+                  <h1 className="text-xl z-50 font-bold bg-black text-white absolute p-1 rounded -left-5">
+                    Host
+                  </h1>
                   <div className="w-32 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
                     <img src="https://www.pngall.com/wp-content/uploads/12/Avatar-Profile-Vector-PNG-File.png" />
                   </div>
@@ -28,12 +29,12 @@ const Room = () => {
             </div>
             <div className="col-span-2  flex justify-center items-center relative">
               <button
-                onClick={() => navigate('/')}
+                onClick={() => navigate('/lobby')}
                 className="border border-black p-3 absolute top-0 right-5 rounded-full bg-gray-600/50"
               >
                 <BackIcon />
               </button>
-              <div className="">
+              <div>
                 <h1 className="text-5xl font-bold  p-4  text-center">Kapit🤸mga🤸beshy! </h1>
                 <h1 className="text-md font-bold  text-center">{id}</h1>
               </div>
@@ -48,7 +49,15 @@ const Room = () => {
           </div>
         </div>
         <div className="col-span-2">
-          <div className="border border-black rounded h-[500px]">Chat</div>
+          <ChatBox />
+          <div className=" flex mt-5">
+            <button
+              className="btn btn-success text-white w-full font-bold"
+              onClick={() => navigate(`/beshify/${id}`)}
+            >
+              Game na!
+            </button>
+          </div>
         </div>
       </div>
     </main>
