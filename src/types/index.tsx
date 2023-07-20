@@ -16,3 +16,9 @@ export type LobbyDetails = {
   roomSize: number;
   playerCount: number;
 };
+
+export type PlayerDetails = {
+  id: string;
+  username: string;
+  avatar: string;
+};
