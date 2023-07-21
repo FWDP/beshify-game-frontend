@@ -1,11 +1,30 @@
+import { useState } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { LiaGreaterThanSolid, LiaLessThanSolid } from 'react-icons/lia';
 import { useNavigate } from 'react-router-dom';
-import logo from '../assets/dev-dino-blue.png';
-
 import { User } from '../types';
 
+import devDinoBlue from '../assets/dev-dino-blue.png';
+import devDinoPink from '../assets/dev-dino-pink.png';
+import dinoBlue from '../assets/dino-blue.png';
+import dinoPink from '../assets/dino-pink.png';
+
 const Home = () => {
+	const avatarList = [devDinoBlue, devDinoPink, dinoBlue, dinoPink];
+	const [avatar, setAvatar] = useState(avatarList[0]);
+
+	const handleSetAvatarForward = () => {
+		avatarList.indexOf(avatar) < avatarList.length - 1
+			? setAvatar(avatarList[avatarList.indexOf(avatar) + 1])
+			: setAvatar(avatarList[0]);
+	};
+
+	const handleSetAvatarBackward = () => {
+		avatarList.indexOf(avatar) > 0
+			? setAvatar(avatarList[avatarList.indexOf(avatar) - 1])
+			: setAvatar(avatarList[avatarList.length - 1]);
+	};
+
 	const {
 		register,
 		handleSubmit,
@@ -14,7 +33,6 @@ const Home = () => {
 	const navigate = useNavigate();
 	const onSubmit: SubmitHandler<User> = (data) => {
 		const targetButton = document.activeElement as HTMLButtonElement | null;
-
 		if (targetButton?.id) {
 			alert(`Welcome ${data.username}!`);
 			navigate(targetButton.id);
@@ -31,14 +49,23 @@ const Home = () => {
 					Ano🤸pangalan🤸mo🤸beshie?
 				</h1>
 				<div className="flex items-center gap-8">
-					<LiaLessThanSolid size={28} />
+					<LiaLessThanSolid
+						className="cursor-pointer"
+						size={28}
+						onClick={handleSetAvatarBackward}
+					/>
 					<img
-						className="w-[130px] mb-4"
-						src={logo}
+						className="w-[130px] h-[130px] mb-2"
+						src={avatar}
 						alt="logo"
 					/>
-					<LiaGreaterThanSolid size={28} />
+					<LiaGreaterThanSolid
+						className="cursor-pointer"
+						size={28}
+						onClick={handleSetAvatarForward}
+					/>
 				</div>
+				<p className="mb-2 text-sm font-lightbold">Select Avatar</p>
 
 				<input
 					type="text"
