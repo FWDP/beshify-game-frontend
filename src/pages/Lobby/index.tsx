@@ -1,9 +1,9 @@
 import { useCallback, useState } from 'react';
 import { BsSearch } from 'react-icons/bs';
 import { RiArrowGoBackFill } from 'react-icons/ri';
-import RoomCard from '../components/RoomCard';
-import { roomData as defaultRoomData } from '../constants';
-import { LobbyDetails } from '../types';
+import { roomData as defaultRoomData } from '../../constants';
+import { LobbyDetails } from '../../types';
+import RoomCard from './components/RoomCard';
 
 const Lobby = () => {
 	const [roomData, setRoomData] = useState<LobbyDetails[]>([
