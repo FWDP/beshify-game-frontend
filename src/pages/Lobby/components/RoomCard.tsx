@@ -1,6 +1,6 @@
 import { useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { LobbyDetails } from '../types';
+import { LobbyDetails } from '../../../types';
 
 const RoomCard: React.FC<LobbyDetails> = ({
 	roomId,

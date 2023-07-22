@@ -2,12 +2,12 @@ import { useState } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { LiaGreaterThanSolid, LiaLessThanSolid } from 'react-icons/lia';
 import { useNavigate } from 'react-router-dom';
-import { User } from '../types';
+import { User } from '../../types';
 
-import devDinoBlue from '../assets/dev-dino-blue.png';
-import devDinoPink from '../assets/dev-dino-pink.png';
-import dinoBlue from '../assets/dino-blue.png';
-import dinoPink from '../assets/dino-pink.png';
+import devDinoBlue from '../../assets/dev-dino-blue.png';
+import devDinoPink from '../../assets/dev-dino-pink.png';
+import dinoBlue from '../../assets/dino-blue.png';
+import dinoPink from '../../assets/dino-pink.png';
 
 const Home = () => {
 	const avatarList = [devDinoBlue, devDinoPink, dinoBlue, dinoPink];
