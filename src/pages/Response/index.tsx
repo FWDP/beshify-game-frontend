@@ -1,7 +1,31 @@
+import { useEffect, useState } from "react";
 import ChatBox from "../../components/ChatBox";
 import ResponseItem from "./components/ResponseItem";
+// import { useNavigate, useParams } from "react-router-dom";
 
 const Response = () => {
+  // const navigate = useNavigate();
+  // const { id } = useParams();
+  const [seconds, setSeconds] = useState(5);
+
+  useEffect(() => {
+    // Simulate countdown timer for voting
+    const interval = setInterval(() => {
+      setSeconds((seconds) => seconds - 1);
+    }, 1000);
+
+    // Navigate to showcase page if the countdown timer reaches 0
+    if (seconds === 0) {
+      console.log("Time's up! Navigate to showcase page.");
+
+      // TODO: Uncomment this and other related lines when showcase page is ready
+      // navigate(`/beshify/showcase/${id}`);
+
+      clearInterval(interval);
+    }
+    return () => clearInterval(interval);
+  }, [seconds]);
+
   return (
     <div className="h-[calc(100vh-74px)] grid grid-cols-3 p-1 mx-40">
       <div className="col-span-2 grid grid-flow-row grid-cols-2 gap-4 overflow-y-auto p-10 relative">
@@ -21,7 +45,12 @@ const Response = () => {
           </div>
           <span className="text-3xl font-bold">:</span>
           <div className="bg-black text-white text-3xl p-1 rounded font-bold">
-            <span>00</span>
+            <span>
+              {
+                // Format seconds to 2 digits
+                seconds.toString().padStart(2, "0")
+              }
+            </span>
           </div>
         </div>
       </div>
