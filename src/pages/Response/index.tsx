@@ -32,8 +32,21 @@ const Response = () => {
           </div>
         ))}
       </div>
-      <div className="p-5">
+      <div className="p-5 row-span-2">
         <ChatBox />
+      </div>
+      {/* Voting Timer Container */}
+      <div className="col-span-2 p-5">
+        <span className="text-lg font-bold block">Voting Timer</span>
+        <div className="flex flex-row">
+          <div className="bg-black text-white text-3xl p-1 rounded font-bold">
+            <span>00</span>
+          </div>
+          <span className="text-3xl font-bold">:</span>
+          <div className="bg-black text-white text-3xl p-1 rounded font-bold">
+            <span>00</span>
+          </div>
+        </div>
       </div>
     </div>
   );
