@@ -1,35 +1,12 @@
 import ChatBox from "../../components/ChatBox";
+import ResponseItem from "./components/ResponseItem";
 
 const Response = () => {
   return (
     <div className="h-[calc(100vh-74px)] grid grid-cols-3 p-1 mx-40">
       <div className="col-span-2 grid grid-flow-row grid-cols-2 gap-4 overflow-y-auto p-10 relative">
         {DUMMY_RESPONSES.map((response) => (
-          <div
-            key={response.id}
-            className="h-[250px] p-4 bg-gray-50 border shadow-sm rounded flex flex-col"
-          >
-            {/* Username Container */}
-            <div>
-              <span className="text-lg font-bold">{response.username}</span>
-            </div>
-            {/* Beshified Text Container */}
-            <div className="flex-grow">
-              <span className="text-md">{response.message}</span>
-            </div>
-            {/* Actions Container */}
-            <div className="justify-end self-end flex flex-row gap-2">
-              <button className="bg-gray-200 h-10 w-10 rounded-full aspect-square">
-                🤸🏽
-              </button>
-              <button className="bg-gray-200 h-10 w-10 rounded-full aspect-square">
-                ✨
-              </button>
-              <button className="bg-gray-200 h-10 w-10 rounded-full aspect-square">
-                ❌
-              </button>
-            </div>
-          </div>
+          <ResponseItem key={response.id} response={response} />
         ))}
       </div>
       <div className="p-5 row-span-2">
