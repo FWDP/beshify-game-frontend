@@ -1,17 +1,24 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { LiaGreaterThanSolid, LiaLessThanSolid } from 'react-icons/lia';
 import { useNavigate } from 'react-router-dom';
 import { User } from '../../types';
 
-import devDinoBlue from '../../assets/dev-dino-blue.png';
-import devDinoPink from '../../assets/dev-dino-pink.png';
-import dinoBlue from '../../assets/dino-blue.png';
-import dinoPink from '../../assets/dino-pink.png';
+import devDinoBlue from '../../assets/devDinoBlue.png';
+import devDinoPink from '../../assets/devDinoPink.png';
+import dinoBlue from '../../assets/dinoBlue.png';
+import dinoPink from '../../assets/dinoPink.png';
 
 const Home = () => {
 	const avatarList = [devDinoBlue, devDinoPink, dinoBlue, dinoPink];
 	const [avatar, setAvatar] = useState(avatarList[0]);
+
+	const navigate = useNavigate();
+
+	useEffect(() => {
+		if (!!localStorage.getItem('username') && !!localStorage.getItem('avatar'))
+			navigate('/lobby');
+	}, [navigate]);
 
 	const handleSetAvatarForward = () => {
 		avatarList.indexOf(avatar) < avatarList.length - 1
@@ -30,11 +37,20 @@ const Home = () => {
 		handleSubmit,
 		formState: { errors },
 	} = useForm<User>();
-	const navigate = useNavigate();
+
 	const onSubmit: SubmitHandler<User> = (data) => {
 		const targetButton = document.activeElement as HTMLButtonElement | null;
 		if (targetButton?.id) {
+			const selectedAvatar = avatar
+				.replace('/src/assets/', '')
+				.replace('.png', '');
 			alert(`Welcome ${data.username}!`);
+
+			//TODO: POST username and avatar
+
+			localStorage.setItem('username', data.username);
+			localStorage.setItem('avatar', selectedAvatar);
+
 			navigate(targetButton.id);
 		}
 	};
