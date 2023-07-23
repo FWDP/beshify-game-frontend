@@ -27,30 +27,35 @@ const Response = () => {
   }, [seconds]);
 
   return (
-    <div className="h-[calc(100vh-74px)] grid grid-cols-3 p-1 mx-40">
-      <div className="col-span-2 grid grid-flow-row grid-cols-2 gap-4 overflow-y-auto p-10 relative">
-        {DUMMY_RESPONSES.map((response) => (
-          <ResponseItem key={response.id} response={response} />
-        ))}
-      </div>
-      <div className="p-5 row-span-2">
-        <ChatBox />
-      </div>
-      {/* Voting Timer Container */}
-      <div className="col-span-2 p-5">
-        <span className="text-lg font-bold block">Voting Timer</span>
-        <div className="flex flex-row">
-          <div className="bg-black text-white text-3xl p-1 rounded font-bold">
-            <span>00</span>
-          </div>
-          <span className="text-3xl font-bold">:</span>
-          <div className="bg-black text-white text-3xl p-1 rounded font-bold">
-            <span>
-              {
-                // Format seconds to 2 digits
-                seconds.toString().padStart(2, "0")
-              }
-            </span>
+    <div className="">
+      <div className="md:container md:mx-auto h-[calc(100vh-74px)] grid grid-cols-3 p-2">
+        <div className="col-span-2 grid grid-flow-row grid-cols-1 lg:grid-cols-2 gap-4 overflow-y-auto p-10 relative">
+          {DUMMY_RESPONSES.map((response) => (
+            <ResponseItem key={response.id} response={response} />
+          ))}
+        </div>
+        <div className="p-5 row-span-2">
+          <h1 className="font-bold text-center text-3xl py-5">
+            ✨Vote na mga Beshie!✨
+          </h1>
+          <ChatBox />
+        </div>
+        {/* Voting Timer Container */}
+        <div className="col-span-2 p-3">
+          <span className="text-lg font-bold block">Voting Timer</span>
+          <div className="flex flex-row">
+            <div className="bg-black text-white text-3xl p-1 rounded font-bold">
+              <span>00</span>
+            </div>
+            <span className="text-3xl font-bold">:</span>
+            <div className="bg-black text-white text-3xl p-1 rounded font-bold">
+              <span>
+                {
+                  // Format seconds to 2 digits
+                  seconds.toString().padStart(2, "0")
+                }
+              </span>
+            </div>
           </div>
         </div>
       </div>
