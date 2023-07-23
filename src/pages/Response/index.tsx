@@ -7,24 +7,31 @@ const Response = () => {
   // const navigate = useNavigate();
   // const { id } = useParams();
   const [seconds, setSeconds] = useState(5);
+  const [minutes, setMinutes] = useState(1);
 
   useEffect(() => {
     // Simulate countdown timer for voting
     const interval = setInterval(() => {
-      setSeconds((seconds) => seconds - 1);
+      if (seconds === 0 && minutes > 0) {
+        setSeconds(59);
+        setMinutes(minutes - 1);
+      } else {
+        setSeconds(seconds - 1);
+      }
     }, 1000);
 
     // Navigate to showcase page if the countdown timer reaches 0
-    if (seconds === 0) {
-      console.log("Time's up! Navigate to showcase page.");
+    if (seconds === 0 && minutes === 0) {
+      console.log("Voting has ended!");
+      clearInterval(interval);
 
       // TODO: Uncomment this and other related lines when showcase page is ready
       // navigate(`/beshify/showcase/${id}`);
 
-      clearInterval(interval);
+      return;
     }
     return () => clearInterval(interval);
-  }, [seconds]);
+  }, [seconds, minutes]);
 
   return (
     <div className="">
@@ -45,7 +52,7 @@ const Response = () => {
           <span className="text-lg font-bold block">Voting Timer</span>
           <div className="flex flex-row">
             <div className="bg-black text-white text-3xl p-1 rounded font-bold">
-              <span>00</span>
+              <span>{minutes.toString().padStart(2, "0")}</span>
             </div>
             <span className="text-3xl font-bold">:</span>
             <div className="bg-black text-white text-3xl p-1 rounded font-bold">
