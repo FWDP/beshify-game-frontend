@@ -1,6 +1,7 @@
-import { useCallback, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { BsSearch } from 'react-icons/bs';
 import { RiArrowGoBackFill } from 'react-icons/ri';
+import { useNavigate } from 'react-router-dom';
 import { roomData as defaultRoomData } from '../../constants';
 import { LobbyDetails } from '../../types';
 import RoomCard from './components/RoomCard';
@@ -9,6 +10,15 @@ const Lobby = () => {
 	const [roomData, setRoomData] = useState<LobbyDetails[]>([
 		...defaultRoomData,
 	]);
+
+	const navigate = useNavigate();
+	useEffect(() => {
+		const verifyUsername = !!!localStorage.getItem('username');
+		const verifyAvatar = !!!localStorage.getItem('avatar');
+		if (verifyUsername && verifyAvatar) {
+			navigate('/');
+		}
+	}, [navigate]);
 
 	const onSearchRoomName = useCallback(
 		(event: React.ChangeEvent<HTMLInputElement>) => {

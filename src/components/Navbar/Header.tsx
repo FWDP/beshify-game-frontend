@@ -1,8 +1,9 @@
 import { Link } from 'react-router-dom';
+import NavbarAvatar from '../Avatar/NavbarAvatar';
 
 const Header = () => {
 	return (
-		<header className="shadow-md navbar bg-base-100">
+		<header className="px-12 shadow-md navbar bg-base-100">
 			<div className="flex-1">
 				<Link
 					className="px-3 text-xl font-semibold normal-case"
@@ -24,6 +25,10 @@ const Header = () => {
 					</li>
 				</ul>
 			</nav>
+			{!!localStorage.getItem('username') &&
+				!!localStorage.getItem('avatar') && (
+					<NavbarAvatar avatar={localStorage.getItem('avatar') as string} />
+				)}
 		</header>
 	);
 };
