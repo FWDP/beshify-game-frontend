@@ -1,5 +1,127 @@
+import ChatBox from "../../components/ChatBox";
+
 const Response = () => {
-  return <div>Response</div>;
+  return (
+    <div className="h-[calc(100vh-74px)] grid grid-cols-3 p-1 mx-40">
+      <div className="col-span-2 grid grid-flow-row grid-cols-2 gap-4 overflow-y-auto p-10 relative">
+        {DUMMY_RESPONSES.map((response) => (
+          <div
+            key={response.id}
+            className="h-[250px] p-4 bg-gray-50 border shadow-sm rounded flex flex-col"
+          >
+            {/* Username Container */}
+            <div>
+              <span className="text-lg font-bold">{response.username}</span>
+            </div>
+            {/* Beshified Text Container */}
+            <div className="flex-grow">
+              <span className="text-md">{response.message}</span>
+            </div>
+            {/* Actions Container */}
+            <div className="justify-end self-end flex flex-row gap-2">
+              <button className="bg-gray-200 h-10 w-10 rounded-full aspect-square">
+                🤸🏽
+              </button>
+              <button className="bg-gray-200 h-10 w-10 rounded-full aspect-square">
+                ✨
+              </button>
+              <button className="bg-gray-200 h-10 w-10 rounded-full aspect-square">
+                ❌
+              </button>
+            </div>
+          </div>
+        ))}
+      </div>
+      <div className="p-5">
+        <ChatBox />
+      </div>
+    </div>
+  );
 };
 
 export default Response;
+
+const DUMMY_RESPONSES = [
+  {
+    id: 1,
+    username: "Beshy1",
+    message: "Hello🤸🏽Beshy!",
+  },
+  {
+    id: 2,
+    username: "Beshy2",
+    message: "What's🤸🏽up🤸🏽Beshy!",
+  },
+  {
+    id: 3,
+    username: "Beshy3",
+    message: "Good🤸🏽morning🤸🏽Beshy!",
+  },
+  {
+    id: 4,
+    username: "Beshy4",
+    message:
+      "Hey🤸🏽Beshy,🤸🏽have🤸🏽you🤸🏽tried🤸🏽out🤸🏽the🤸🏽new🤸🏽VS🤸🏽Code🤸🏽extension?🤸🏽",
+  },
+  {
+    id: 5,
+    username: "Beshy5",
+    message: "Hi🤸🏽Beshy,🤸🏽what's🤸🏽your🤸🏽favorite🤸🏽programming🤸🏽language?🤸🏽",
+  },
+  {
+    id: 6,
+    username: "Beshy6",
+    message:
+      "What's🤸🏽good🤸🏽Beshy,🤸🏽have🤸🏽you🤸🏽seen🤸🏽the🤸🏽latest🤸🏽tech🤸🏽news?🤸🏽",
+  },
+  {
+    id: 7,
+    username: "Beshy7",
+    message:
+      "Hey🤸🏽Beshy,🤸🏽do🤸🏽you🤸🏽have🤸🏽any🤸🏽exciting🤸🏽projects🤸🏽you're🤸🏽working🤸🏽on?🤸🏽",
+  },
+  {
+    id: 8,
+    username: "Beshy8",
+    message: "Good🤸🏽afternoon🤸🏽Beshy,🤸🏽how's🤸🏽your🤸🏽day🤸🏽been🤸🏽so🤸🏽far?🤸🏽",
+  },
+  {
+    id: 9,
+    username: "Beshy9",
+    message:
+      "What's🤸🏽up🤸🏽Beshy,🤸🏽have🤸🏽you🤸🏽tried🤸🏽out🤸🏽the🤸🏽new🤸🏽CSS🤸🏽framework?🤸🏽",
+  },
+  {
+    id: 10,
+    username: "Beshy10",
+    message: "Hey🤸🏽Beshy,🤸🏽what's🤸🏽your🤸🏽favorite🤸🏽coding🤸🏽playlist?🤸🏽",
+  },
+  {
+    id: 11,
+    username: "Beshy5",
+    message: "Hi🤸🏽Beshy,🤸🏽what's🤸🏽your🤸🏽favorite🤸🏽programming🤸🏽language?🤸🏽",
+  },
+  {
+    id: 12,
+    username: "Beshy6",
+    message:
+      "What's🤸🏽good🤸🏽Beshy,🤸🏽have🤸🏽you🤸🏽seen🤸🏽the🤸🏽latest🤸🏽tech🤸🏽news?🤸🏽",
+  },
+  {
+    id: 13,
+    username: "Beshy7",
+    message:
+      "Hey🤸🏽Beshy,🤸🏽do🤸🏽you🤸🏽have🤸🏽any🤸🏽exciting🤸🏽projects🤸🏽you're🤸🏽working🤸🏽on?🤸🏽",
+  },
+  {
+    id: 14,
+    username: "Beshy8",
+    message: "Good🤸🏽afternoon🤸🏽Beshy,🤸🏽how's🤸🏽your🤸🏽day🤸🏽been🤸🏽so🤸🏽far?🤸🏽",
+  },
+  {
+    id: 15,
+    username: "Beshy9",
+    message:
+      "What's🤸🏽up🤸🏽Beshy,🤸🏽have🤸🏽you🤸🏽tried🤸🏽out🤸🏽the🤸🏽new🤸🏽CSS🤸🏽framework?🤸🏽",
+  },
+];
