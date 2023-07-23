@@ -1,10 +1,21 @@
+import { useEffect } from 'react';
 import { FormProvider, useForm } from 'react-hook-form';
+import { useNavigate } from 'react-router-dom';
 import { Room } from '../../types';
 import { FormInput } from './components/InputForm';
 
 const CreateRoom = () => {
 	const { trigger } = useForm<Room>();
 	const methods = useForm();
+	const navigate = useNavigate();
+
+	useEffect(() => {
+		const verifyUsername = !!!localStorage.getItem('username');
+		const verifyAvatar = !!!localStorage.getItem('avatar');
+		if (verifyUsername && verifyAvatar) {
+			navigate('/');
+		}
+	}, [navigate]);
 
 	const onSubmit = (data: any) => {
 		console.log(data);

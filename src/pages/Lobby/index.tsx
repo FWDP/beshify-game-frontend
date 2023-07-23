@@ -12,6 +12,8 @@ const Lobby = () => {
 	]);
 
 	const navigate = useNavigate();
+	const handleNavigateCreateRoom = () => navigate('/create-room');
+
 	useEffect(() => {
 		const verifyUsername = !!!localStorage.getItem('username');
 		const verifyAvatar = !!!localStorage.getItem('avatar');
@@ -33,7 +35,13 @@ const Lobby = () => {
 	);
 
 	return (
-		<main className="flex items-center justify-center mt-5">
+		<main className="relative flex items-center justify-center mt-5">
+			<button
+				className="absolute w-40 py-2 mb-4 font-black text-white uppercase rounded px-38 top-2 left-12 btn-success"
+				onClick={handleNavigateCreateRoom}
+			>
+				CREATE ROOM
+			</button>
 			<div className="w-[500px] ">
 				<RiArrowGoBackFill
 					onClick={() => window.history.back()}

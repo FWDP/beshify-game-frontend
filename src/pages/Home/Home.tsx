@@ -101,6 +101,14 @@ const Home = () => {
 
 				<button
 					type="submit"
+					id="lobby"
+					className="w-48 px-3 py-2 font-black text-white uppercase rounded-[10px] btn-info"
+				>
+					Enter
+				</button>
+
+				{/* <button
+					type="submit"
 					id="create-room"
 					className="w-48 px-3 py-2 mb-4 font-black text-white uppercase rounded btn-success"
 				>
@@ -113,7 +121,7 @@ const Home = () => {
 					className="w-48 px-3 py-2 font-black text-white uppercase rounded btn-info"
 				>
 					Join Room
-				</button>
+				</button> */}
 			</form>
 		</main>
 	);
