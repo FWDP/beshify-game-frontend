@@ -2,7 +2,7 @@ type TProps = {
   response: {
     id: number;
     username: string;
-    message: string;
+    statement: string;
   };
 };
 
@@ -15,7 +15,7 @@ const ResponseItem: React.FC<TProps> = ({ response }) => {
       </div>
       {/* Beshified Text Container */}
       <div className="flex-grow">
-        <span className="text-md">{response.message}</span>
+        <span className="text-md">{response.statement}</span>
       </div>
       {/* Actions Container */}
       <div className="justify-end self-end flex flex-row gap-2">
