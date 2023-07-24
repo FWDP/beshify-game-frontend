@@ -76,83 +76,83 @@ const DUMMY_RESPONSES = [
   {
     id: 1,
     username: "Beshy1",
-    message: "Hello🤸🏽Beshy!",
+    statement: "Hello🤸🏽Beshy!",
   },
   {
     id: 2,
     username: "Beshy2",
-    message: "What's🤸🏽up🤸🏽Beshy!",
+    statement: "What's🤸🏽up🤸🏽Beshy!",
   },
   {
     id: 3,
     username: "Beshy3",
-    message: "Good🤸🏽morning🤸🏽Beshy!",
+    statement: "Good🤸🏽morning🤸🏽Beshy!",
   },
   {
     id: 4,
     username: "Beshy4",
-    message:
+    statement:
       "Hey🤸🏽Beshy,🤸🏽have🤸🏽you🤸🏽tried🤸🏽out🤸🏽the🤸🏽new🤸🏽VS🤸🏽Code🤸🏽extension?🤸🏽",
   },
   {
     id: 5,
     username: "Beshy5",
-    message: "Hi🤸🏽Beshy,🤸🏽what's🤸🏽your🤸🏽favorite🤸🏽programming🤸🏽language?🤸🏽",
+    statement: "Hi🤸🏽Beshy,🤸🏽what's🤸🏽your🤸🏽favorite🤸🏽programming🤸🏽language?🤸🏽",
   },
   {
     id: 6,
     username: "Beshy6",
-    message:
+    statement:
       "What's🤸🏽good🤸🏽Beshy,🤸🏽have🤸🏽you🤸🏽seen🤸🏽the🤸🏽latest🤸🏽tech🤸🏽news?🤸🏽",
   },
   {
     id: 7,
     username: "Beshy7",
-    message:
+    statement:
       "Hey🤸🏽Beshy,🤸🏽do🤸🏽you🤸🏽have🤸🏽any🤸🏽exciting🤸🏽projects🤸🏽you're🤸🏽working🤸🏽on?🤸🏽",
   },
   {
     id: 8,
     username: "Beshy8",
-    message: "Good🤸🏽afternoon🤸🏽Beshy,🤸🏽how's🤸🏽your🤸🏽day🤸🏽been🤸🏽so🤸🏽far?🤸🏽",
+    statement: "Good🤸🏽afternoon🤸🏽Beshy,🤸🏽how's🤸🏽your🤸🏽day🤸🏽been🤸🏽so🤸🏽far?🤸🏽",
   },
   {
     id: 9,
     username: "Beshy9",
-    message:
+    statement:
       "What's🤸🏽up🤸🏽Beshy,🤸🏽have🤸🏽you🤸🏽tried🤸🏽out🤸🏽the🤸🏽new🤸🏽CSS🤸🏽framework?🤸🏽",
   },
   {
     id: 10,
     username: "Beshy10",
-    message: "Hey🤸🏽Beshy,🤸🏽what's🤸🏽your🤸🏽favorite🤸🏽coding🤸🏽playlist?🤸🏽",
+    statement: "Hey🤸🏽Beshy,🤸🏽what's🤸🏽your🤸🏽favorite🤸🏽coding🤸🏽playlist?🤸🏽",
   },
   {
     id: 11,
     username: "Beshy5",
-    message: "Hi🤸🏽Beshy,🤸🏽what's🤸🏽your🤸🏽favorite🤸🏽programming🤸🏽language?🤸🏽",
+    statement: "Hi🤸🏽Beshy,🤸🏽what's🤸🏽your🤸🏽favorite🤸🏽programming🤸🏽language?🤸🏽",
   },
   {
     id: 12,
     username: "Beshy6",
-    message:
+    statement:
       "What's🤸🏽good🤸🏽Beshy,🤸🏽have🤸🏽you🤸🏽seen🤸🏽the🤸🏽latest🤸🏽tech🤸🏽news?🤸🏽",
   },
   {
     id: 13,
     username: "Beshy7",
-    message:
+    statement:
       "Hey🤸🏽Beshy,🤸🏽do🤸🏽you🤸🏽have🤸🏽any🤸🏽exciting🤸🏽projects🤸🏽you're🤸🏽working🤸🏽on?🤸🏽",
   },
   {
     id: 14,
     username: "Beshy8",
-    message: "Good🤸🏽afternoon🤸🏽Beshy,🤸🏽how's🤸🏽your🤸🏽day🤸🏽been🤸🏽so🤸🏽far?🤸🏽",
+    statement: "Good🤸🏽afternoon🤸🏽Beshy,🤸🏽how's🤸🏽your🤸🏽day🤸🏽been🤸🏽so🤸🏽far?🤸🏽",
   },
   {
     id: 15,
     username: "Beshy9",
-    message:
+    statement:
       "What's🤸🏽up🤸🏽Beshy,🤸🏽have🤸🏽you🤸🏽tried🤸🏽out🤸🏽the🤸🏽new🤸🏽CSS🤸🏽framework?🤸🏽",
   },
 ];
